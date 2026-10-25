@@ -1,0 +1,54 @@
+:root {
+  --bg: #14120f;
+  --surface: #1d1a15;
+  --line: #33302a;
+  --text: #eee9de;
+  --muted: #a29b8c;
+  --dim: #4b473e;
+  --accent: #d8b87a;
+  --accent-ink: #1a150b;
+
+  --display: "Bricolage Grotesque Variable", "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "Public Sans Variable", "Public Sans", "Segoe UI", system-ui, sans-serif;
+
+  color-scheme: dark;
+}
+
+/* Tema terang mengikuti sistem, kecuali pengguna memilih gelap secara manual */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f5f2ea;
+    --surface: #ffffff;
+    --line: #ddd6c6;
+    --text: #1e1b15;
+    --muted: #6b6556;
+    --dim: #c9c2b0;
+    --accent: #80601f;
+    --accent-ink: #ffffff;
+    color-scheme: light;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #14120f;
+  --surface: #1d1a15;
+  --line: #33302a;
+  --text: #eee9de;
+  --muted: #a29b8c;
+  --dim: #4b473e;
+  --accent: #d8b87a;
+  --accent-ink: #1a150b;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #f5f2ea;
+  --surface: #ffffff;
+  --line: #ddd6c6;
+  --text: #1e1b15;
+  --muted: #6b6556;
+  --dim: #c9c2b0;
+  --accent: #80601f;
+  --accent-ink: #ffffff;
+  color-scheme: light;
+}

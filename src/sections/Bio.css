@@ -1,0 +1,181 @@
+.bio-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) 1fr;
+  gap: clamp(32px, 6vw, 88px);
+  align-items: start;
+}
+
+.portrait {
+  position: sticky;
+  top: 110px;
+}
+
+.frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 26px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.face.a {
+  font: 800 clamp(100px, 14vw, 170px) var(--display);
+  letter-spacing: -0.06em;
+  color: var(--dim);
+}
+
+.face.a:has(img),
+.face.b:has(img) {
+  padding: 0;
+}
+
+.face.b {
+  background: var(--accent);
+  color: var(--accent-ink);
+  clip-path: inset(100% 0 0 0);
+  will-change: clip-path;
+}
+
+.face.b strong {
+  display: block;
+  font: 800 clamp(30px, 3.4vw, 44px) / 1.05 var(--display);
+  letter-spacing: -0.03em;
+}
+
+.face.b span {
+  display: block;
+  margin-top: 10px;
+  font-size: 14.5px;
+  opacity: 0.75;
+}
+
+.face img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bar {
+  height: 3px;
+  background: var(--line);
+  border-radius: 3px;
+  margin-top: 14px;
+  overflow: hidden;
+}
+
+.bar i {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--text);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.cap {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.lead {
+  font: 500 clamp(24px, 3vw, 38px) / 1.25 var(--display);
+  letter-spacing: -0.02em;
+  margin: 0 0 28px;
+  max-width: 24ch;
+}
+
+.prose {
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.prose strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.facts {
+  margin: 40px 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.facts div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.facts dt {
+  color: var(--muted);
+}
+
+.facts dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+}
+
+.journey {
+  margin: 56px 0 0;
+}
+
+.journey h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 20px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+
+.step b {
+  font: 800 20px var(--display);
+  color: var(--accent);
+}
+
+.step p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.step strong {
+  color: var(--text);
+  display: block;
+  font-weight: 600;
+}
+
+@media (max-width: 860px) {
+  .bio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait {
+    position: relative;
+    top: 0;
+    max-width: 340px;
+  }
+
+  .step {
+    grid-template-columns: 70px 1fr;
+  }
+}

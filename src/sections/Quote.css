@@ -1,0 +1,22 @@
+.quote {
+  padding: clamp(90px, 14vw, 190px) 0;
+}
+
+.quote p {
+  max-width: 22ch;
+  margin: 0 auto;
+  text-align: center;
+  font: 500 clamp(30px, 5.6vw, 68px) / 1.12 var(--display);
+  letter-spacing: -0.035em;
+}
+
+.w {
+  opacity: 0.18;
+  filter: blur(3px);
+  transition: opacity 0.45s, filter 0.45s;
+}
+
+.w.lit {
+  opacity: 1;
+  filter: none;
+}

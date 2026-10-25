@@ -1,0 +1,28 @@
+.sec-h {
+  font-weight: 800;
+  font-size: clamp(40px, 6.5vw, 88px);
+  margin-bottom: clamp(28px, 4vw, 52px);
+}
+
+.mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+}
+
+.mask > span {
+  display: block;
+  transform: translateY(105%);
+  transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.mask.in > span {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mask > span {
+    transform: none;
+    transition: none;
+  }
+}

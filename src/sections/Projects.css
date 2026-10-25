@@ -1,0 +1,51 @@
+.work a.p {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 24px;
+  padding: 30px 0;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+  /* Gabungan animasi muncul (Reveal) dan geser saat disorot */
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+    padding 0.35s;
+  transition-delay: var(--d, 0s), var(--d, 0s), 0s;
+}
+
+.work a.p:last-of-type {
+  border-bottom: 1px solid var(--line);
+}
+
+.work a.p:hover {
+  padding-left: 14px;
+}
+
+.p h3 {
+  font-size: clamp(28px, 4.4vw, 52px);
+  transition: color 0.25s;
+}
+
+.p:hover h3 {
+  color: var(--accent);
+}
+
+.p span.y {
+  align-self: center;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.p p {
+  grid-column: 1 / -1;
+  margin: 6px 0 0;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work a.p {
+    transition: padding 0.35s;
+    transition-delay: 0s;
+  }
+}

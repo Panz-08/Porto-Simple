@@ -1,0 +1,92 @@
+.acc {
+  border-top: 1px solid var(--line);
+}
+
+.row {
+  border-bottom: 1px solid var(--line);
+}
+
+.row > h3 button {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px 0;
+  font: 800 clamp(26px, 4vw, 46px) var(--display);
+  letter-spacing: -0.03em;
+  transition: color 0.25s, padding 0.35s;
+}
+
+.row > h3 button:hover {
+  color: var(--accent);
+  padding-left: 12px;
+}
+
+.row > h3 button:focus-visible {
+  outline: 2px solid var(--accent);
+}
+
+.row > h3 button::after {
+  content: "";
+  flex: none;
+  width: 18px;
+  height: 18px;
+  background:
+    linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 2px 100% no-repeat;
+  transition: transform 0.4s;
+}
+
+.row.open > h3 button::after {
+  transform: rotate(135deg);
+}
+
+.panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.row.open .panel {
+  grid-template-rows: 1fr;
+}
+
+.panel > div {
+  overflow: hidden;
+  /* Konten tertutup tidak ikut terbaca pembaca layar maupun bisa difokuskan */
+  visibility: hidden;
+  transition: visibility 0s 0.5s;
+}
+
+.row.open .panel > div {
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 0 30px;
+  margin: 0;
+  list-style: none;
+}
+
+.chips li {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel,
+  .panel > div {
+    transition: none;
+  }
+}

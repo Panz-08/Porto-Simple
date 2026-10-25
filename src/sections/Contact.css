@@ -1,0 +1,60 @@
+.mail {
+  display: inline-block;
+  font: 800 clamp(34px, 8.2vw, 120px) / 1 var(--display);
+  letter-spacing: -0.05em;
+  text-decoration: none;
+  background: linear-gradient(var(--accent), var(--accent)) 0 100% / 0 0.07em no-repeat;
+  transition: background-size 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.3s;
+  word-break: break-word;
+  padding-bottom: 0.08em;
+}
+
+.mail:hover {
+  background-size: 100% 0.07em;
+  color: var(--accent);
+}
+
+.btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+
+.btn {
+  font: 600 15px var(--body);
+  padding: 13px 24px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: none;
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s;
+}
+
+.btn:hover {
+  border-color: var(--muted);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn.pri {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.footer {
+  margin-top: clamp(72px, 10vw, 130px);
+  padding: 22px 0 calc(40px + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 14px;
+}

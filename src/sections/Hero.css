@@ -1,0 +1,141 @@
+.hero {
+  padding-top: clamp(120px, 18vh, 170px);
+  padding-bottom: 40px;
+}
+
+.hero-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--muted);
+  font-size: 14px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+}
+
+.name {
+  font-weight: 800;
+  font-size: calc(clamp(68px, 17vw, 250px) * var(--name-scale, 1));
+  line-height: 0.86;
+  margin: clamp(24px, 5vw, 56px) 0 0;
+  letter-spacing: -0.05em;
+}
+
+.name .ln {
+  display: block;
+  overflow: hidden;
+  padding: 0.04em 0.06em 0.1em 0;
+}
+
+.name .ln-last {
+  text-align: right;
+  color: var(--accent);
+}
+
+.name .ch {
+  display: inline-block;
+  transform: translateY(110%) rotate(7deg);
+  transform-origin: left bottom;
+  animation: rise 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes rise {
+  to {
+    transform: none;
+  }
+}
+
+.hero-foot {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  margin-top: clamp(28px, 5vw, 56px);
+  align-items: end;
+}
+
+.hero-foot p {
+  max-width: 44ch;
+  color: var(--muted);
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.badge {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-weight: 500;
+  font-size: 14.5px;
+}
+
+.badge.live {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.badge.live i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 50%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 0%, transparent);
+    opacity: 0.5;
+  }
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: up 0.9s 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes up {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .hero-foot {
+    grid-template-columns: 1fr;
+  }
+
+  .badges {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .name .ch {
+    animation: none;
+    transform: none;
+  }
+
+  .fade {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .badge.live i {
+    animation: none;
+  }
+}
