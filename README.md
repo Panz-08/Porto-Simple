@@ -70,3 +70,6 @@ Gambar pratinjau proyek: taruh di `public/images/projects/` lalu isi `image: "/i
 ```
 
 Setiap komponen punya file CSS di sebelahnya, jadi gaya mudah dicari. Warna dan font ada di `src/styles/tokens.css`.
+
+Udah Segitu Ajah.
+
